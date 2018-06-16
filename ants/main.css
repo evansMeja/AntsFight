@@ -1,0 +1,55 @@
+*{
+padding:0px;
+margin:0px;
+}
+
+body{
+background-color: grey;
+}
+
+#gameField{
+margin-top: 30px;
+margin-left: 5%;
+height:90%;
+width:90%;
+background:white;
+border-radius: 3px;
+}
+
+#header{
+padding:3px;
+font-size:20px;
+font-weight: bold;
+text-align: center;
+color: black;
+}
+
+#insect1{
+height: 10%;
+top: 400;
+left: 102;
+position: absolute;
+}
+
+#insect2{
+top: 188;
+left: 1520;
+height: 10%;
+position: absolute;
+}
+
+.roller{
+    animation-name: rotator;
+    animation-iteration-count: 1;
+    animation-duration: 4s;
+}
+
+@keyframes rotator{
+    0%{
+      transform:rotate(0deg);  
+    }
+    100%{
+      transform:rotate(360deg);   
+    }
+}
+
