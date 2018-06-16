@@ -12,3 +12,10 @@ height:30%;
 padding:30px;
 background:white;
 }
+
+#header{
+color:brown;
+background:white;
+padding:2px;
+text-align:center;
+}
