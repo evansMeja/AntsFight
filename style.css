@@ -11,6 +11,19 @@ height:30%;
 .cool_desc{
 padding:30px;
 background:white;
+height:20%;
+}
+
+.myImg{
+float:left;
+margin-left:5%;
+height:100%;
+}
+
+.myContent{
+float:left;
+margin-left:5%;
+height:100%;
 }
 
 #header{
