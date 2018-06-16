@@ -1,0 +1,16 @@
+<html>
+<title>three js Web3D example</title>
+<head>
+<link href="main.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<div id="header">Ant Fight</div>
+<div id="gameField">
+<button id="test">click here</button>
+<img src="images/1.jpeg"     id="insect2">
+<img src="images/index.jpeg"  id="insect1">
+</div>
+<script src="test.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
