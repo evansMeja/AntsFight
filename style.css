@@ -1,6 +1,11 @@
+*{
+margin:0px;
+padding:0px;
+}
 
 body{
 background:url("https://res.cloudinary.com/decc6gd2d/image/upload/v1529176161/test.jpg");
+padding-top:100px;
 }
 
 #myTextArea{
@@ -12,17 +17,6 @@ height:30%;
 padding:30px;
 background:white;
 height:20%;
-}
-
-.myImg{
-width:90%;
-height:50%;
-}
-
-.myContent{
-float:left;
-margin-left:5%;
-height:100%;
 }
 
 #header{
