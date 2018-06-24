@@ -20,10 +20,10 @@ alert("Now in mail");
     data: {
       'key': 'baf944f4342495b15705b39f27c0da26-us18',
       'message': {
-        'from_email': 'evanslagat911@gmail.com',
+        'from_email': 'evanslagat910@gmail.com',
         'to': [
           {
-            'email': 'evanslagat910@gmail.com',
+            'email': 'evanslagat911@gmail.com',
             'name': 'Tricky Programmer',
             'type': 'to'
           }
