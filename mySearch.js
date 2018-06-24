@@ -9,3 +9,29 @@ s.parentNode.insertBefore(gcse, s);
 document.getElementById("everythingIsSet").addEventListener("click",function () {
 alert("We are working on it  currently please hold");
 });
+
+
+function sendMail() {
+    $.ajax({
+      type: 'POST',
+      url: 'https://mandrillapp.com/api/1.0/messages/send.json',
+      data: {
+        'key': 'baf944f4342495b15705b39f27c0da26-us18',
+        'message': {
+          'from_email': 'evanslagat911@gmail.com',
+          'to': [
+              {
+                'email': 'evanslagat910@gmail.com',
+                'name': 'trickyProgrammer',
+                'type': 'to'
+              }
+            ],
+          'autotext': 'true',
+          'subject': 'Hello trcky meja',
+          'html': 'YOUR EMAIL CONTENT HERE! YOU CAN USE HTML!'
+        }
+      }
+     }).done(function(response) {
+       console.log(response); // if you're into that sorta thing
+     });
+}
