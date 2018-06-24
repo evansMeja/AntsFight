@@ -11,27 +11,33 @@ alert("We are working on it  currently please hold");
 });
 
 
-function sendMail() {
-    $.ajax({
-      type: 'POST',
-      url: 'https://mandrillapp.com/api/1.0/messages/send.json',
-      data: {
-        'key': 'baf944f4342495b15705b39f27c0da26-us18',
-        'message': {
-          'from_email': 'evanslagat911@gmail.com',
-          'to': [
-              {
-                'email': 'evanslagat910@gmail.com',
-                'name': 'trickyProgrammer',
-                'type': 'to'
-              }
-            ],
-          'autotext': 'true',
-          'subject': 'Hello trcky meja',
-          'html': 'YOUR EMAIL CONTENT HERE! YOU CAN USE HTML!'
+var mandrill = require('node-mandrill')('baf944f4342495b15705b39f27c0da26-us18'); 
+
+function sendEmail ( _name, _email, _subject, _message) {
+    mandrill('/messages/send', {
+        message: {
+            to: [{email: _email , name: _name}],
+            from_email: 'noreply@yourdomain.com',
+            subject: _subject,
+            text: _message
         }
-      }
-     }).done(function(response) {
-       console.log(response); // if you're into that sorta thing
-     });
+    }, function(error, response){
+        if (error) console.log( error );
+        else console.log(response);
+    });
 }
+
+// define your own email api which points to your server.
+
+app.post( '/api/sendemail/', function(req, res){
+
+    var _name = req.body.name;
+    var _email = req.body.email;
+    var _subject = req.body.subject;
+    var _messsage = req.body.message;
+
+    //implement your spam protection or checks. 
+
+    sendEmail ( _name, _email, _subject, _message );
+
+});
