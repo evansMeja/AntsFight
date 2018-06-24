@@ -12,6 +12,8 @@ alert("We are working on it  currently please hold");
 });
 
 function sendMail(){
+ 
+alert("Now in mail");
   $.ajax({
     type: "POST",
     url: "https://mandrillapp.com/api/1.0/messages/send.json",
