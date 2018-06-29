@@ -1,15 +1,16 @@
 $("#displayvid1").click(function(){
-$("#vid2").css("visibility","hidden");
-$("#vid1").css("visibility","visible");
+$("#vid2").hide();
+$("#vid1").show();
 });
 $("#displayvid2").click(function(){
-$("#vid1").css("visibility","hidden");
-$("#vid2").css("visibility","visible");
+$("#vid1").hide();
+$("#vid2").show();
 });
 
 
 $("#map").click(function(){
-$("#vid1").css("visibility","visible");
+$("#vid2").hide();
+$("#vid1").hide();
 function myMap() {
 var mapProp= {
     center:new google.maps.LatLng(51.508742,-0.120850),
