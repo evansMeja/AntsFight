@@ -1,5 +1,10 @@
 $("#displayvid1").click(function(){
+$("#vid2").css("visibility","hidden");
 $("#vid1").css("visibility","visible");
+});
+$("#displayvid2").click(function(){
+$("#vid1").css("visibility","hidden");
+$("#vid2").css("visibility","visible");
 });
 
 
