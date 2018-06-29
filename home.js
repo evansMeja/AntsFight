@@ -1,3 +1,3 @@
 $("#displayvid1").click(function(){
-alert("clicked me pleasse");
+$("#vid1").css("visibility","visible");
 });
