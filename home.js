@@ -1,3 +1,9 @@
+$("document").ready(function(){
+$("#vid2").hide();
+$("#vid1").show();
+});
+
+
 $("#displayvid1").click(function(){
 $("#vid2").hide();
 $("#vid1").show();
