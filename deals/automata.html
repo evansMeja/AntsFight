@@ -15,6 +15,7 @@
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/mobile.css" media="screen and (max-width: 980px)">
 	<link rel="stylesheet" href="css/print.css" media="print">
+	<link rel="stylesheet" href="../sendemail.css" type="text/css">
 </head>
 <body>
 <div id="sidebar">
@@ -32,6 +33,20 @@
  			<div class="icon-pill"></div>
 		</div>
 	</div>
+<img src="me.jpeg" style="width:100%;">
+    <form method="POST" action="https://formspree.io/evanslagat911@gmail.com">
+     <input type="text" id="fname" name="name" placeholder="name">
+     <input type="email"  id="lname" name="_replyto" placeholder="e.g your@gmail.com">
+     <input type="hidden" name="_cc" value="another@email.com,yetanother@email.com" />
+      <select id="country" name="country">
+      <option value="australia">Kenya</option>
+      <option value="canada">Uganda</option>
+      <option value="usa">USA</option>
+    </select>
+    <textarea id="subject" name="subject" placeholder="Leave a comment.." style="height:200px"></textarea>
+    <input type="submit" value="send text">
+  </form>
+      <h2 id="subscrb">welcome</h2>
 </div><!-- /sidebar -->
 <main id="content" class="post">
 	<header>
