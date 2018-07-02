@@ -40,19 +40,8 @@
      <input type="text" id="fname" name="name" placeholder="name">
      <input type="email"  id="lname" name="_replyto" placeholder="e.g your@gmail.com">
      <input type="hidden" name="_cc" value="another@email.com,yetanother@email.com" />
-      <select id="country" name="country">
-      <option value="australia">Kenya</option>
-      <option value="canada">Uganda</option>
-      <option value="usa">USA</option>
-    </select>
-<table>
-<tr>
-<td>
-<h3>Country</h3>
-</td>
-</tr>
-<tr>
-    <td valign="top"><select name="countries" id="countries" style="width:300px;">
+
+    <select name="countries" id="countries" style="width:300px;">
       <option value='ke' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag ke" data-title="Kenya">Kenya</option>
       <option value='ad' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag ad" data-title="Andorra">Andorra</option>
       <option value='ae' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag ae" data-title="United Arab Emirates">United Arab Emirates</option>
@@ -300,19 +289,12 @@
       <option value='zm' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag zm" data-title="Zambia">Zambia</option>
       <option value='zr' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag zr" data-title="Zaire (former)">Zaire (former)</option>
       <option value='zw' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag zw" data-title="Zimbabwe">Zimbabwe</option>
-    </select></td>
-  </tr>
-  <tr>
-  <td><h3>rate my site</h3></td>
-  </tr>
-  <tr>
-    <td valign="top"><div id="byjson"></div></td>
-  </tr>
- <tr>
-<td><h3>Likes</h3></td>
- </tr>
-<tr>
-<td>
+    </select><br/>
+  
+  <h3>rate my site</h3>
+ <div id="byjson"></div>
+ <h3>Likes</h3>
+
  <select style="width:200px" class="tech" name="tech" id="tech" onchange="showValue(this)">
       <option value="calendar" data-image="images/msdropdown/icons/icon_calendar.gif">Travelling</option>
       <option value="shopping_cart" data-image="images/msdropdown/icons/icon_cart.gif">Shopping</option>
@@ -326,11 +308,8 @@
       <option value="secured" data-image="images/msdropdown/icons/icon_secure.gif">Mathematics</option>
       <option value="video" data-image="images/msdropdown/icons/icon_video.gif">Watching</option>
       <option value="cd" data-image="images/msdropdown/icons/icon_cd.gif" name="cd">None</option>
-    </select>
-</td>
-</tr>
-</table>
-    <textarea id="subject" name="subject" placeholder="Leave a comment.." style="height:200px"></textarea>
+    </select><br>
+    <textarea id="subject" name="subject" placeholder="Leave a comment.." style="height:100px"></textarea><br>
     <input type="submit" value="send text">
   </form>
       <h2 id="subscrb">welcome</h2>
