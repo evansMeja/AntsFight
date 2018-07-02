@@ -16,16 +16,12 @@
 	<link rel="stylesheet" href="css/mobile.css" media="screen and (max-width: 980px)">
 	<link rel="stylesheet" href="css/print.css" media="print">
 	<link rel="stylesheet" href="../sendemail.css" type="text/css">
-	
-	  <link rel="stylesheet" href="../countries/examples/css/sample.css" />
-          <script src="../countries/js/jquery/jquery-1.9.0.min.js"></script>
-
-          <link rel="../countries/stylesheet" type="text/css" href="css/msdropdown/dd.css" />
-          <script src="../countries/js/msdropdown/jquery.dd.js"></script>
-
-
-<link rel="stylesheet" type="text/css" href="../countries/css/msdropdown/skin2.css" />
-<link rel="stylesheet" type="text/css" href="../countries/css/msdropdown/flags.css" />
+	<link rel="stylesheet" href="../countries/examples/css/sample.css" />
+        <script src="../countries/js/jquery/jquery-1.9.0.min.js"></script>
+        <link rel="../countries/stylesheet" type="text/css" href="css/msdropdown/dd.css" />
+        <script src="../countries/js/msdropdown/jquery.dd.js"></script>
+        <link rel="stylesheet" type="text/css" href="../countries/css/msdropdown/skin2.css" />
+        <link rel="stylesheet" type="text/css" href="../countries/css/msdropdown/flags.css" />
 </head>
 <body>
 <div id="sidebar">
@@ -463,7 +459,50 @@
 <a href="#"><img id="upArrow" src="img/comps/up-arrow-circle-hi.png" alt="Up Arrow"></a>
 <script src="js/scaffolder.js"></script>
 <script src="js/functions.js"></script>
-<script src="https://res.cloudinary.com/decc6gd2d/raw/upload/v1530511339/javascript/countryScript.js
-"></script>
+<script>
+function createByJson() {
+var jsonData = 
+[					
+{text:'give us 5 ** ratings',description:'we love your impression', value:''},					
+{image:'images/msdropdown/icons/Amex-56.png', description:'My life. My card...', value:'amex', text:'Amex'},
+{image:'images/msdropdown/icons/Discover-56.png', description:'It pays to Discover...', value:'Discover', text:'Excellent'},
+{image:'images/msdropdown/icons/Mastercard-56.png', title:'For everything else...', description:'For everything else...', value:'Mastercard', text:'Best'},
+{image:'images/msdropdown/icons/Cash-56.png', description:'Sorry not available...', value:'cash', text:'Good', disabled:true},
+{image:'images/msdropdown/icons/Visa-56.png', description:'All you need...', value:'Visa', text:'Average'},
+{image:'images/msdropdown/icons/Paypal-56.png', description:'Pay and get paid...', value:'Paypal', text:'Poor'}
+];
+$("#byjson").msDropDown({byJson:{data:jsonData, name:'payments2'}}).data("dd");
+}
+
+$(document).ready(function(e) {		
+	//no use
+	try {
+		var pages = $("#pages").msDropdown({on:{change:function(data, ui) {
+		var val = data.value;
+		if(val!="")
+		window.location = val;
+		}}}).data("dd");
+		var pagename = document.location.pathname.toString();
+		pagename = pagename.split("/");
+		pages.setIndexByValue(pagename[pagename.length-1]);
+		$("#ver").html(msBeautify.version.msDropdown);
+	} catch(e) {
+		//console.log(e);	
+	}
+	
+	$("#ver").html(msBeautify.version.msDropdown);		
+	//convert
+	$("select").msDropdown({roundedBorder:false});
+	createByJson();
+	$("#tech").data("dd");
+});
+function showValue(h) {
+	console.log(h.name, h.value);
+}
+$("#tech").change(function() {
+	console.log("by jquery: ", this.value);
+});
+
+</script>
 </body>
 </html>
