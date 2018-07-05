@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="chatApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Live Chat</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
+    
+<script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyC7lkzVYxjM1_ZN_ng8GWa55DCFhbc7fwc",
+    authDomain: "live-chat-dc379.firebaseapp.com",
+    databaseURL: "https://live-chat-dc379.firebaseio.com",
+    projectId: "live-chat-dc379",
+    storageBucket: "",
+    messagingSenderId: "788801445465"
+  };
+  firebase.initializeApp(config);
+</script>
+    
+    <script src="app.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/2.2.0/angularfire.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body ng-controller="ChatController">
+    <br>
+    <div class="container">
+        <div class="panel panel-primary">
+            <div class="panel-heading">My New Live Chat App</div>
+            <div class="panel-body">
+                <p ng-repeat="m in messages">{{m.message}} - {{m.date | date:'medium'}}</p>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Message here..." ng-model="messageText">
+                </div>
+                <button type="submit" class="btn btn-default" ng-click="send()">Send</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
