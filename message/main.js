@@ -18,7 +18,7 @@ document.getElementById('contactForm').addEventListener('submit', submitForm);
 
 // Submit form
 function submitForm(e){
-  e.preventDefault();
+ 
 
   // Get values
   var name = getInputVal('name');
