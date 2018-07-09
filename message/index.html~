@@ -46,6 +46,9 @@
             <label>Message</label>
             <textarea name="message" rows="5" id="message"></textarea>
           </p>
+          <input type="hidden" name="_format" value="plain" />
+          <input type="hidden" name="_next" value="https://evansmeja.github.io/crazyprogrammer/" />
+          <input type="text" name="_gotcha" style="display:none" />
           <p class="full">
             <button type="submit">Submit</button>
           </p>
