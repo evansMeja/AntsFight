@@ -21,6 +21,26 @@ h2 {
   font-size: 30px;
   font-weight: 400;
 }
+
+.logo-img{
+animation-name:classicRotator;
+animation-iteration-count:infinite;
+animation-duration:3s;
+animation-delay:2s;
+}
+
+@keyframes classicRotator{
+	0%{
+	tranform:rotateX(0deg) translate(-3px) scale(.8);
+        border-radius:10%;
+	}
+	100%{
+	tranform:rotateX(360deg) translate(0px) scale(1);
+	border-radius:0%;
+	}
+}
+
+
 h3 {
   font-size: 28px;
   font-weight: 300;
