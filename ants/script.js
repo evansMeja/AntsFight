@@ -1,9 +1,9 @@
 $(function() {
 $("#gameField").click(function(e) {
 
-  var offset = $(this).offset();
-  var relativeX = (e.pageX - offset.left);
-  var relativeY = (e.pageY - offset.top);
+var offset = $(this).offset();
+var relativeX = (e.pageX - offset.left);
+var relativeY = (e.pageY - offset.top);
 document.getElementById("mx").innerHTML="Mouse X: " + relativeX ;
 document.getElementById("my").innerHTML="Mouse Y: " + relativeY ;
 });
