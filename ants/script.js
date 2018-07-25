@@ -164,11 +164,26 @@ function getID(el) {
 return document.getElementById(el);
 }
 
+var insect1Points=0;
+var insect2Points=0;
+
+function addInsect1Points(){
+insect1Points++;
+alert("New insect 1 points are "+insect1Points);
+}
+
+function addInsect1Points(){
+insect2Points++;
+  alert("New insect 2 points are "+insect2Points);
+}
+
 function moveLeft() {
 while(insect2Xposition>minleft &&  leftkeyPressed){
 $("#insect2").css("left",insect2Xposition)
 if((insect1Xposition==insect2Xposition && insect1Yposition==insect2Yposition) || insectIsWithinABlowableRange()){
-blowInsect1();  
+ blowInsect1(); 
+ blowInsect2();  
+ addInsect1Points(); 
 break;
 }
 else if(insect1Xposition==insect2Xposition && !(insect1Yposition==insect2Yposition) && insect1Yposition<insect2Yposition){
@@ -182,7 +197,8 @@ else if(insect1Xposition==insect2Xposition && !(insect1Yposition==insect2Ypositi
 }
     insect2Xposition--;
 }       
-setInsect2Values();
+updateNewPositionForInsect(2);
+updateNewPositionForInsect(1);
 }
 
 function moveDown() {
@@ -190,6 +206,8 @@ while(insect2Yposition<maxtop && downkeyPressed){
 $("#insect2").css("top",insect2Yposition);
 if((insect1Yposition==insect2Yposition && insect1Xposition==insectXposition) || insectIsWithinABlowableRange()){
  blowInsect1(); 
+ blowInsect2();  
+ addInsect1Points(); 
  break;
 }
 else if(insect1Yposition==insect2Yposition && !(insect1Xposition==insect2Xposition) && insect1Xposition<insect2Xposition){
@@ -204,7 +222,8 @@ else if(insect1Yposition==insect2Yposition && !(insect1Xposition==insect2Xpositi
 
     insect2Yposition++;
 }       
-setInsect2Values();
+updateNewPositionForInsect(2);
+updateNewPositionForInsect(1);
 }
 
 
@@ -212,7 +231,9 @@ function moveUp() {
 while(insect2Yposition>mintop &&  upkeyPressed){
 $("#insect2").css("top",insect2Yposition)
 if((insect1Xposition==insect2Xposition && insect1Yposition==insect2Yposition) || insectIsWithinABlowableRange()){
-blowInsect1(); 
+ blowInsect1(); 
+ blowInsect2();  
+ addInsect1Points(); 
 break;
 }
 else if(insect1Yposition==insect2Yposition && !(insect1Xposition==insect2Xposition) && insect1Xposition<insect2Xposition){
@@ -226,14 +247,17 @@ else if(insect1Yposition==insect2Yposition && !(insect1Xposition==insect2Xpositi
 }
     insect2Yposition--;
 }       
-setInsect2Values();
+updateNewPositionForInsect(2);
+updateNewPositionForInsect(1);
 }
 
 function moveRight() {
 while(insect2Xposition<maxleft &&  rightkeyPressed){
 $("#insect2").css("left",insect2Xposition)
 if((insect1Xposition==insect2Xposition && insect1Yposition==insect2Yposition) || insectIsWithinABlowableRange()){
-blowInsect1();  
+ blowInsect1(); 
+ blowInsect2();  
+ addInsect1Points();  
 break;
 }
 else if(insect1Xposition==insect2Xposition && !(insect1Yposition==insect2Yposition) && insect1Yposition<insect2Yposition){
@@ -247,7 +271,8 @@ else if(insect1Xposition==insect2Xposition && !(insect1Yposition==insect2Ypositi
 }
     insect2Xposition++;
 }       
-setInsect2Values();
+updateNewPositionForInsect(2);
+updateNewPositionForInsect(1);
 }
 
 
@@ -259,7 +284,9 @@ function moveLeftW() {
 while(insect1Xposition>minleft &&  akeyPressed){
 $("#insect1").css("left",insect1Xposition)
 if((insect1Xposition==insect2Xposition && insect1Yposition==insect2Yposition) || insectIsWithinABlowableRange()){
-blowInsect2();  
+ blowInsect1(); 
+ blowInsect2();  
+ addInsect2Points();
 break;
 }
 else if(insect1Xposition==insect2Xposition && !(insect1Yposition==insect2Yposition) && insect1Yposition<insect2Yposition){
@@ -272,14 +299,17 @@ alert("press the W key to blow insect 2");
 }
     insect1Xposition--;
 }       
-setInsect1Values();
+updateNewPositionForInsect(2);
+updateNewPositionForInsect(1);
 }
 
 function moveDownW() {
 while(insect1Yposition<maxtop && skeyPressed){
 $("#insect1").css("top",insect1Yposition);
 if((insect1Yposition==insect2Yposition && insect1Xposition==insectXposition) || insectIsWithinABlowableRange()){
- blowInsect2(); 
+ blowInsect1(); 
+ blowInsect2();  
+ addInsect2Points();
  break;
 }
 else if(insect1Yposition==insect2Yposition && !(insect1Xposition==insect2Xposition) && insect1Xposition < insect2Xposition){
@@ -292,7 +322,8 @@ else if(insect1Yposition==insect2Yposition && !(insect1Xposition==insect2Xpositi
 }
     insect1Yposition++;
 }       
-setInsect1Values();
+updateNewPositionForInsect(2);
+updateNewPositionForInsect(1);
 }
 
 
@@ -300,7 +331,9 @@ function moveUpW() {
 while(insect1Yposition>mintop &&  wkeyPressed){
 $("#insect1").css("top",insect1Yposition)
 if((insect1Xposition==insect2Xposition && insect1Yposition==insect2Yposition) || insectIsWithinABlowableRange()){
-blowInsect2(); 
+ blowInsect1(); 
+ blowInsect2();  
+ addInsect2Points(); 
 break;
 }
 else if(insect1Yposition==insect2Yposition && !(insect1Xposition==insect2Xposition) &&  (insect1Xposition < insect2Xposition)){
@@ -311,14 +344,17 @@ alert("press A left arrow to blow insect 2 once");
 }
     insect1Yposition--;
 }       
-setInsect1Values();
+updateNewPositionForInsect(2);
+updateNewPositionForInsect(1);
 }
 
 function moveRightW() {
 while(insect1Xposition < maxleft &&  dkeyPressed){
 $("#insect1").css("left",insect1Xposition);
 if((insect1Xposition==insect2Xposition && insect1Yposition==insect2Yposition) || insectIsWithinABlowableRange()){
-blowInsect2();  
+ blowInsect1(); 
+ blowInsect2();  
+ addInsect2Points();
 break;
 }
 else if(insect1Xposition==insect2Xposition && !(insect1Yposition==insect2Yposition) && insect1Yposition < insect2Yposition){
@@ -329,7 +365,8 @@ else if(insect1Xposition==insect2Xposition && !(insect1Yposition==insect2Ypositi
 }
     insect1Xposition++;
 }       
-setInsect1Values();
+updateNewPositionForInsect(2);
+updateNewPositionForInsect(1);
 }
 
 
