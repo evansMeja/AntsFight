@@ -306,7 +306,7 @@ updateNewPositionForInsect(1);
 function moveDownW() {
 while(insect1Yposition<maxtop && skeyPressed){
 $("#insect1").css("top",insect1Yposition);
-if((insect1Yposition==insect2Yposition && insect1Xposition==insectXposition) || insectIsWithinABlowableRange()){
+if((insect1Yposition==insect2Yposition && insect1Xposition==insect2Xposition) || insectIsWithinABlowableRange()){
  blowInsect1(); 
  blowInsect2();  
  addInsect2Points();
