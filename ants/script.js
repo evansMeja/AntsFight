@@ -136,6 +136,31 @@ function updateNewPositionForInsect(insectType){
    }
 }
 
+var Ymax;
+var Xmax;
+var Ymin;
+var Xmin;
+
+function  insectIsWithinABlowableRange(){
+   if(insect1Yposition > insect2Yposition){
+    Ymax=insect1Yposition;
+  }else{
+    Ymax=insect2Yposition;
+  }
+  
+  if(insect1Xposition > insect1Xposition){
+    Xmax=insect1Xposition;
+  }else{
+    Xmax=insect2Xposition;
+  }
+  
+  if(Ymax<150 && Xmax<150){
+     return true;
+  }else{
+  return false;
+  }
+}
+
 
 function getID(el) {
 return document.getElementById(el);
@@ -144,7 +169,7 @@ return document.getElementById(el);
 function moveLeft() {
 while(insect2Xposition>minleft &&  leftkeyPressed){
 $("#insect2").css("left",insect2Xposition)
-if(insect1Xposition==insect2Xposition && insect1Yposition==insect2Yposition){
+if((insect1Xposition==insect2Xposition && insect1Yposition==insect2Yposition) || insectIsWithinABlowableRange()){
 blowInsect1();  
 break;
 }
@@ -165,7 +190,7 @@ setInsect2Values();
 function moveDown() {
 while(insect2Yposition<maxtop && downkeyPressed){
 $("#insect2").css("top",insect2Yposition);
-if(insect1Yposition==insect2Yposition && insect1Xposition==insectXposition){
+if((insect1Yposition==insect2Yposition && insect1Xposition==insectXposition) || insectIsWithinABlowableRange()){
  blowInsect1(); 
  break;
 }
@@ -188,7 +213,7 @@ setInsect2Values();
 function moveUp() {
 while(insect2Yposition>mintop &&  upkeyPressed){
 $("#insect2").css("top",insect2Yposition)
-if(insect1Xposition==insect2Xposition && insect1Yposition==insect2Yposition){
+if((insect1Xposition==insect2Xposition && insect1Yposition==insect2Yposition) || insectIsWithinABlowableRange()){
 blowInsect1(); 
 break;
 }
@@ -209,7 +234,7 @@ setInsect2Values();
 function moveRight() {
 while(insect2Xposition<maxleft &&  rightkeyPressed){
 $("#insect2").css("left",insect2Xposition)
-if(insect1Xposition==insect2Xposition && insect1Yposition==insect2Yposition){
+if((insect1Xposition==insect2Xposition && insect1Yposition==insect2Yposition) || insectIsWithinABlowableRange()){
 blowInsect1();  
 break;
 }
@@ -235,7 +260,7 @@ setInsect2Values();
 function moveLeftW() {
 while(insect1Xposition>minleft &&  akeyPressed){
 $("#insect1").css("left",insect1Xposition)
-if(insect1Xposition==insect2Xposition && insect1Yposition==insect2Yposition){
+if((insect1Xposition==insect2Xposition && insect1Yposition==insect2Yposition) || insectIsWithinABlowableRange()){
 blowInsect2();  
 break;
 }
@@ -255,7 +280,7 @@ setInsect1Values();
 function moveDownW() {
 while(insect1Yposition<maxtop && skeyPressed){
 $("#insect1").css("top",insect1Yposition);
-if(insect1Yposition==insect2Yposition && insect1Xposition==insectXposition){
+if((insect1Yposition==insect2Yposition && insect1Xposition==insectXposition) || insectIsWithinABlowableRange()){
  blowInsect2(); 
  break;
 }
@@ -276,7 +301,7 @@ setInsect1Values();
 function moveUpW() {
 while(insect1Yposition>mintop &&  wkeyPressed){
 $("#insect1").css("top",insect1Yposition)
-if(insect1Xposition==insect2Xposition && insect1Yposition==insect2Yposition){
+if((insect1Xposition==insect2Xposition && insect1Yposition==insect2Yposition) || insectIsWithinABlowableRange()){
 blowInsect2(); 
 break;
 }
@@ -294,7 +319,7 @@ setInsect1Values();
 function moveRightW() {
 while(insect1Xposition < maxleft &&  dkeyPressed){
 $("#insect1").css("left",insect1Xposition);
-if(insect1Xposition==insect2Xposition && insect1Yposition==insect2Yposition){
+if((insect1Xposition==insect2Xposition && insect1Yposition==insect2Yposition) || insectIsWithinABlowableRange()){
 blowInsect2();  
 break;
 }
