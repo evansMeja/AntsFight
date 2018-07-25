@@ -115,25 +115,27 @@ When using the WASD keys the W key is used as an up arrow, A as the left arrow, 
 */
 function blowInsect1(){
     $("#insect1").css("left",getRandomInt(minleft,maxleft)).css("top",getRandomInt(mintop,maxtop)).toggleClass("roller");   
-    setInsect1Values();
-    setInsect2Values();
+    updateNewPositionForInsect(1);
 }
 
 function blowInsect2(){
  $("#insect2").css("left",getRandomInt(minleft,maxleft)).css("top",getRandomInt(mintop,maxtop)).toggleClass("roller"); 
-    setInsect1Values();
-    setInsect2Values();
+    updateNewPositionForInsect(2);
 }
 
-function setInsect1Values(){
-insect1Yposition=getOffset(getID("insect1")).top;
-insect1Xposition=getOffset(getID("insect1")).left;
+function updateNewPositionForInsect(insectType){
+  switch(insectType){
+    case 1:
+    insect1Yposition=getOffset(getID("insect1")).top;
+    insect1Xposition=getOffset(getID("insect1")).left;
+      break;
+    case 2:
+     insect2Yposition=getOffset(getID("insect2")).top;
+     insect2Xposition=getOffset(getID("insect2")).left;
+      break;
+   }
 }
 
-function setInsect2Values(){
-insect2Yposition=getOffset(getID("insect2")).top;
-insect2Xposition=getOffset(getID("insect2")).left;
-}
 
 function getID(el) {
 return document.getElementById(el);
@@ -146,8 +148,14 @@ if(insect1Xposition==insect2Xposition && insect1Yposition==insect2Yposition){
 blowInsect1();  
 break;
 }
-else if(insect1Xposition==insect2Xposition && !(insect1Yposition==insect2Yposition)){
- break;       
+else if(insect1Xposition==insect2Xposition && !(insect1Yposition==insect2Yposition) && insect1Yposition<insect2Yposition){
+ alert("Press the down key to blow insect 1");
+  break;       
+}
+  
+else if(insect1Xposition==insect2Xposition && !(insect1Yposition==insect2Yposition) && insect1Yposition>=insect2Yposition){
+ alert("Press the down key to blow insect 1");
+  break;       
 }
     insect2Xposition--;
 }       
@@ -161,9 +169,16 @@ if(insect1Yposition==insect2Yposition && insect1Xposition==insectXposition){
  blowInsect1(); 
  break;
 }
-else if(insect1Yposition==insect2Yposition && !(insect1Xposition==insect2Xposition)){
- break;       
+else if(insect1Yposition==insect2Yposition && !(insect1Xposition==insect2Xposition) && insect1Xposition<insect2Xposition){
+ alert("Press the left key to blow insect 1");
+  break;       
 }
+
+else if(insect1Yposition==insect2Yposition && !(insect1Xposition==insect2Xposition) && insect1Xposition>=insect2Xposition){
+  alert("Press the right key to blow insect 1");
+  break;       
+}
+
     insect2Yposition++;
 }       
 setInsect2Values();
@@ -177,8 +192,14 @@ if(insect1Xposition==insect2Xposition && insect1Yposition==insect2Yposition){
 blowInsect1(); 
 break;
 }
-else if(insect1Yposition==insect2Yposition && !(insect1Xposition==insect2Xposition)){
- break;       
+else if(insect1Yposition==insect2Yposition && !(insect1Xposition==insect2Xposition) && insect1Xposition<insect2Xposition){
+ alert("Press the left key to blow insect 1");
+  break;       
+}
+
+else if(insect1Yposition==insect2Yposition && !(insect1Xposition==insect2Xposition) && insect1Xposition>=insect2Xposition){
+  alert("Press the right key to blow insect 1");
+  break;       
 }
     insect2Yposition--;
 }       
@@ -192,8 +213,14 @@ if(insect1Xposition==insect2Xposition && insect1Yposition==insect2Yposition){
 blowInsect1();  
 break;
 }
-else if(insect1Xposition==insect2Xposition && !(insect1Yposition==insect2Yposition)){
- break;       
+else if(insect1Xposition==insect2Xposition && !(insect1Yposition==insect2Yposition) && insect1Yposition<insect2Yposition){
+ alert("Press the down key to blow insect 1");
+  break;       
+}
+  
+else if(insect1Xposition==insect2Xposition && !(insect1Yposition==insect2Yposition) && insect1Yposition>=insect2Yposition){
+ alert("Press the down key to blow insect 1");
+  break;       
 }
     insect2Xposition++;
 }       
@@ -212,8 +239,13 @@ if(insect1Xposition==insect2Xposition && insect1Yposition==insect2Yposition){
 blowInsect2();  
 break;
 }
-else if(insect1Xposition==insect2Xposition && !(insect1Yposition==insect2Yposition)){
- break;       
+else if(insect1Xposition==insect2Xposition && !(insect1Yposition==insect2Yposition) && insect1Yposition<insect2Yposition){
+ alert("press the S key to blow insect 2");
+  break;       
+}
+else if(insect1Xposition==insect2Xposition && !(insect1Yposition==insect2Yposition) && insect1Yposition>=insect2Yposition){
+alert("press the W key to blow insect 2");
+  break;       
 }
     insect1Xposition--;
 }       
@@ -227,8 +259,13 @@ if(insect1Yposition==insect2Yposition && insect1Xposition==insectXposition){
  blowInsect2(); 
  break;
 }
-else if(insect1Yposition==insect2Yposition && !(insect1Xposition==insect2Xposition)){
- break;       
+else if(insect1Yposition==insect2Yposition && !(insect1Xposition==insect2Xposition) && insect1Xposition < insect2Xposition){
+ alert("Press A key to blow insect 2");
+  break;       
+}
+else if(insect1Yposition==insect2Yposition && !(insect1Xposition==insect2Xposition) && insect1Xposition >= insect2Xposition){
+ alert("Press D key to blow insect 2");
+  break;       
 }
     insect1Yposition++;
 }       
@@ -243,8 +280,11 @@ if(insect1Xposition==insect2Xposition && insect1Yposition==insect2Yposition){
 blowInsect2(); 
 break;
 }
-else if(insect1Yposition==insect2Yposition && !(insect1Xposition==insect2Xposition)){
+else if(insect1Yposition==insect2Yposition && !(insect1Xposition==insect2Xposition) &&  (insect1Xposition < insect2Xposition)){
+ alert("press D right arrow to blow insect 2 once");
  break;       
+}else if(insect1Yposition==insect2Yposition && !(insect1Xposition==insect2Xposition) &&  (insect1XYposition >= insect2Xposition)){
+alert("press A left arrow to blow insect 2 once");
 }
     insect1Yposition--;
 }       
@@ -252,14 +292,17 @@ setInsect1Values();
 }
 
 function moveRightW() {
-while(insect1Xposition<maxleft &&  dkeyPressed){
-$("#insect1").css("left",insect1Xposition)
+while(insect1Xposition < maxleft &&  dkeyPressed){
+$("#insect1").css("left",insect1Xposition);
 if(insect1Xposition==insect2Xposition && insect1Yposition==insect2Yposition){
 blowInsect2();  
 break;
 }
-else if(insect1Xposition==insect2Xposition && !(insect1Yposition==insect2Yposition)){
+else if(insect1Xposition==insect2Xposition && !(insect1Yposition==insect2Yposition) && insect1Yposition < insect2Yposition){
+  alert("press S arrow to blow insect 2 once");
  break;       
+}else if(insect1Xposition==insect2Xposition && !(insect1Yposition==insect2Yposition) && insect1Yposition >= insect2Yposition){
+  alert("press W arrow to blow insect 2 once");    
 }
     insect1Xposition++;
 }       
