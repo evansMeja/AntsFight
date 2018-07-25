@@ -204,7 +204,7 @@ updateNewPositionForInsect(1);
 function moveDown() {
 while(insect2Yposition<maxtop && downkeyPressed){
 $("#insect2").css("top",insect2Yposition);
-if((insect1Yposition==insect2Yposition && insect1Xposition==insectXposition) || insectIsWithinABlowableRange()){
+if((insect1Yposition==insect2Yposition && insect1Xposition==insect2Xposition) || insectIsWithinABlowableRange()){
  blowInsect1(); 
  blowInsect2();  
  addInsect1Points(); 
