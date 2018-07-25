@@ -21,12 +21,8 @@ var mintop=80;
 var minleft=130;
 var maxleft=1400;;
 var maxtop=493;
-var insect1Xposition=0;
-var insect1Yposition=0;
-var insect2Xposition=0;
-var insect2Yposition=0;
-setInsect2Values();
-setInsect1Values();
+updateNewPositionForInsect(1);
+updateNewPositionForInsect(2);
 document.addEventListener('keydown', keyDownHandler, false);
 document.addEventListener('keyup', keyUpHandler, false);
 
