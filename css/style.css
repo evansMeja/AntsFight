@@ -29,7 +29,7 @@ animation-iteration-count:infinite;
 	tranform:scale(.6) rotateX(0deg) translateY(0px);
 	}
 	100%{
-	tranform:scale(1) rotateX(0deg) translateY(30px);
+	tranform:scale(1) rotateX(360deg) translateY(30px);
 	}
 }
 
