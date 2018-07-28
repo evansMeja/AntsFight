@@ -17,6 +17,22 @@ h5,
 h6 {
   font-family: 'Roboto', sans-serif;
 }
+
+.social_links_icons{
+animation-name:social_icons;
+animation-duration:3s;
+animation-iteration-count:infinite;
+}
+
+@keyframes social_icons{
+	0%{
+	tranform:scale(.6) rotateX(0deg) translateY(0px);
+	}
+	100%{
+	tranform:scale(1) rotateX(0deg) translateY(30px);
+	}
+}
+
 h2 {
   font-size: 30px;
   font-weight: 400;
