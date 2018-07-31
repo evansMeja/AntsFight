@@ -22,18 +22,14 @@ h6 {
 animation-name:social_icons;
 animation-duration:3s;
 animation-iteration-count:infinite;
-padding:2px;
-background:orange;
 }
 
 @keyframes social_icons{
 	0%{
-	transform:scale(.6) rotateX(-90deg) rotateY(-90deg);
-	padding:2px;
+	transform:rotateX(0deg);
 	}
 	100%{
-	transform:scale(1) rotateX(90deg) rotateY(-90deg);
-	padding:4px;
+	transform:rotateX(360deg);
 	}
 }
 
