@@ -1,33 +1,55 @@
 $(document).ready(function(){
-	
+var name;
+var email;
+var website;
+var comment;	
 $("#v0").click(function(){
+ setValues(1);
   $.ajax({
     url: "https://formspree.io/evanslagat911@gmail.com",
     method: "POST",
-    data: {name: getVal("name"),message:getVal("comment"),email:getVal("email"),website:getVal("website")},
+    data: {name:name,comment:comment,email:email,website:website},
     dataType: "json",
     success: function(result) {
        alert(result);
     }
 }); 
-alert("Message was sent successfully");
 }); 
 
 $("#v1").click(function(){
+ setValues(2);
   $.ajax({
     url: "https://formspree.io/evanslagat911@gmail.com",
     method: "POST",
-    data: {name: getVal("name1"),message:getVal("comment1"),email:getVal("email1"),website:getVal("website1")},
+    data: {name:name,comment:comment,email:email,website:website},
     dataType: "json",
     success: function(result) {
        alert(result);
     }
 });
-alert("Message was sent successfully");
 }); 
 	
 function getVal(el){
 return document.getElementById(el).val;
+}
+	
+function setValues(option){
+switch(option){
+	case 1:
+	name = getVal("name1");
+	message = getVal("comment1");
+        email = getVal("email1");
+	website = getVal("website1");
+	break;
+	case 2:
+	name = getVal("name1");
+	message = getVal("comment1");
+        email = getVal("email1");
+	website = getVal("website1");
+		break;
+	default:
+		break;
+}
 }
 
 
