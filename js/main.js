@@ -8,7 +8,7 @@ $("#v0").click(function(){
   $.ajax({
     url: "https://formspree.io/evanslagat911@gmail.com",
     method: "POST",
-    data: {name: name,message: comment,email:emai,website:website},
+    data: {name: name,message:comment,email:email,website:website},
     dataType: "json"
 }); 
 alert("Message was sent successfully");
@@ -22,7 +22,7 @@ $("#v1").click(function(){
   $.ajax({
     url: "https://formspree.io/evanslagat911@gmail.com",
     method: "POST",
-    data: {name: name,message: comment,email:emai,website:website},
+    data: {name: name,message: comment,email:email,website:website},
     dataType: "json"
 }); 
 alert("Message was sent successfully");
