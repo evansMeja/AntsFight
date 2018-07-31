@@ -418,17 +418,18 @@
           <form method="POST" action="/formspree.io/evanslagat911@gmail.com">
             <div class="form-group">
                 <label for="email">Full Name:</label>
-                <input name="Name" type="text" class="form-control" id="name">
+                <input name="Name" type="text" class="form-control" id="name" placeholder="enter your full name">
              </div>
               <div class="form-group">
                 <label for="email">Email address:</label>
-                <input name="email" type="email" class="form-control" id="email">
+                <input name="email" type="email" class="form-control" id="email" placeholder="enter your email address">
              </div>
              <div class="form-group">
                 <label for="website">Enter your website:</label>
-                <input name="website" type="text" class="form-control" id="website">
+                <input name="website" type="text" class="form-control" id="website" placeholder="enter your website">
              </div>
             <div class="form-group">
+                <label for="comment">Leave a comment:</label>
                 <textarea name="comment" id="comment" placeholder="leave a comment here please.."></textarea>
              </div>
             
@@ -458,6 +459,31 @@
                <li><a href="#">Previous</a></li>
                <li><a href="#">Next</a></li>
          </ul> 
+         
+         <!-- Trigger the modal with a button -->
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+        <p>Some text in the modal.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+         
         </div>
     </div>
     
