@@ -1,4 +1,16 @@
 $(document).ready(function(){
+	
+$("#Demonstration").click(function(){
+    $.post("https://formspree.io/evanslagat911@gmail.com",
+    {
+        name: "Donald Duck",
+        city: "Duckburg"
+    },
+    function(data, status){
+        alert("Data: " + data + "\nStatus: " + status);
+    });
+}); 
+	
 
 
 	$("#portfolio-contant-active").mixItUp();
