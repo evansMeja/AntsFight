@@ -1,30 +1,28 @@
 $(document).ready(function(){
 	
 $("#v0").click(function(){
-    	var name=getVal("name");
-	var email=getVal("email");
-	var comment=getVal("comment");
-	var website=getVal("website");
   $.ajax({
     url: "https://formspree.io/evanslagat911@gmail.com",
     method: "POST",
-    data: {name: name,message:comment,email:email,website:website},
-    dataType: "json"
+    data: {name: getVal("name"),message:getVal("comment"),email:getVal("email"),website:getVal("website")},
+    dataType: "json",
+    success: function(result) {
+       alert(result);
+    }
 }); 
 alert("Message was sent successfully");
 }); 
 
 $("#v1").click(function(){
-    	var name=getVal("name1");
-	var email=getVal("email1");
-	var comment=getVal("comment1");
-	var website=getVal("website1");
   $.ajax({
     url: "https://formspree.io/evanslagat911@gmail.com",
     method: "POST",
-    data: {name: name,message: comment,email:email,website:website},
-    dataType: "json"
-}); 
+    data: {name: getVal("name1"),message:getVal("comment1"),email:getVal("email1"),website:getVal("website1")},
+    dataType: "json",
+    success: function(result) {
+       alert(result);
+    }
+});
 alert("Message was sent successfully");
 }); 
 	
