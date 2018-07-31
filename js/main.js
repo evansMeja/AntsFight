@@ -1,15 +1,36 @@
 $(document).ready(function(){
 	
-$("#Demonstration").click(function(){
-alert("get into th stuff");
+$("#v0").click(function(){
+    	var name=getVal("name");
+	var email=getVal("email");
+	var comment=getVal("comment");
+	var website=getVal("website");
   $.ajax({
     url: "https://formspree.io/evanslagat911@gmail.com",
     method: "POST",
-    data: {name: "Evans Meja",message: "hello!"},
+    data: {name: name,message: comment,email:emai,website:website},
     dataType: "json"
 }); 
-alert("Thanks We are working on it");
+alert("Message was sent successfully");
 }); 
+
+$("#v1").click(function(){
+    	var name=getVal("name1");
+	var email=getVal("email1");
+	var comment=getVal("comment1");
+	var website=getVal("website1");
+  $.ajax({
+    url: "https://formspree.io/evanslagat911@gmail.com",
+    method: "POST",
+    data: {name: name,message: comment,email:emai,website:website},
+    dataType: "json"
+}); 
+alert("Message was sent successfully");
+}); 
+	
+function getVal(el){
+return document.getElementById(el).val;
+}
 
 
 
