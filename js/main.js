@@ -1,16 +1,17 @@
 $(document).ready(function(){
 	
 $("#Demonstration").click(function(){
-    $.post("https://formspree.io/evanslagat911@gmail.com",
-    {
-        name: "Donald Duck",
-        city: "Duckburg"
-    },
-    function(data, status){
-        alert("Data: " + data + "\nStatus: " + status);
-    });
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+     alert(this.responseText);
+    }
+  };
+xhttp.open("POST", "https://formspree.github.io/evanslagat911@gmail.com", true);
+xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+xhttp.send("fname=Henry&lname=Ford"); 
 }); 
-	
+
 
 
 	$("#portfolio-contant-active").mixItUp();
