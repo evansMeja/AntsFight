@@ -413,12 +413,27 @@
        <div class="col-sm-4">
          <img src="https://res.cloudinary.com/decc6gd2d/image/upload/v1530997063/math.jpg" width="100%">       
        </div>
-       <div class="col-sm-4">
-        <input name="name" type="text" placeholder="Enter Your Full Name" style="width:90%;color:purple"><br><br>
-        <input name="email" type="email" placeholder="Enter Your Email Address" style="width:90%;color:purple"><br><br>
-        <input type="text" placeholder="Enter Your Website" style="width:90%;color:purple"><br><br>
-        <textarea placeholder="Please Leave a Comment..." style="width:90%;color:purple"></textarea><br><br>
-        <input class="btn btn-info" type="submit" value="send message"><br>
+       <div class="col-sm-4">        
+         
+          <form method="POST" action="/formspree.io/evanslagat911@gmail.com">
+            <div class="form-group">
+                <label for="email">Full Name:</label>
+                <input name="Name" type="text" class="form-control" id="name">
+             </div>
+              <div class="form-group">
+                <label for="email">Email address:</label>
+                <input name="email" type="email" class="form-control" id="email">
+             </div>
+             <div class="form-group">
+                <label for="website">Enter your website:</label>
+                <input name="website" type="text" class="form-control" id="website">
+             </div>
+            <div class="form-group">
+                <textarea name="comment" id="comment" placeholder="leave a comment here please.."></textarea>
+             </div>
+            
+              <button type="submit" class="btn btn-default">Submit</button>
+          </form> 
        </div>
        <div class="col-sm-4">
        <h4>Related links</h4>
