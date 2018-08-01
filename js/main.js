@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	
 $("#demo").click(function(){
-alert("cool");
+alert("Value of Email = "+$("#email").val);
 $.ajax({
     url: "https://formspree.io/evanslagat911@gmail.com",
     method: "POST",
