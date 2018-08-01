@@ -1,7 +1,8 @@
 $(document).ready(function(){
 	
 $("#demo").click(function(){
-alert("Value of Email = "+$("#email").val);
+var email=$("#email").val();
+alert(email);
 $.ajax({
     url: "https://formspree.io/evanslagat911@gmail.com",
     method: "POST",
@@ -9,60 +10,6 @@ $.ajax({
     dataType: "json"
 }); 
 });
-	
-var name;
-var email;
-var website;
-var comment;	
-$("#v0").click(function(){
- setValues(1);
-  $.ajax({
-    url: "https://formspree.io/evanslagat911@gmail.com",
-    method: "POST",
-    data: {name:"evans",comment:"good men",email:"I a have no email",website:"fine"},
-    dataType: "json",
-    success: function(result) {
-       alert(result);
-    }
-}); 
-}); 
-
-$("#v1").click(function(){
- setValues(2);
-  $.ajax({
-    url: "https://formspree.io/evanslagat911@gmail.com",
-    method: "POST",
-    data: {name:"evans",comment:"good men",email:"I a have no email",website:"fine"},
-    dataType: "json",
-    success: function(result) {
-       alert(result);
-    }
-});
-}); 
-	
-function getVal(el){
-return document.getElementById(el).val;
-}
-	
-function setValues(option){
-switch(option){
-	case 1:
-	name = getVal("name1");
-	message = getVal("comment1");
-        email = getVal("email1");
-	website = getVal("website1");
-	break;
-	case 2:
-	name = getVal("name1");
-	message = getVal("comment1");
-        email = getVal("email1");
-	website = getVal("website1");
-		break;
-	default:
-		break;
-}
-}
-
 
 
 	$("#portfolio-contant-active").mixItUp();
