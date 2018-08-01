@@ -1,4 +1,14 @@
 $(document).ready(function(){
+	
+$("#demo").click(function(){
+$.ajax({
+    url: "https://formspree.io/evanslagat911@gmail.com",
+    method: "POST",
+    data: {message: "Hey this is evans!"},
+    dataType: "json"
+}); 
+});
+	
 var name;
 var email;
 var website;
