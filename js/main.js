@@ -6,14 +6,10 @@ var email=$("#email").val();
 var name=$("#name").val();
 var comment=$("#comment").val();
 var website=$("#website").val();
-alert(email);
-alert(name);
-alert(website);
-alert(comment);
 $.ajax({
     url: "https://formspree.io/evanslagat911@gmail.com",
     method: "POST",
-    data: {message: "Hey this is evans!",email:"evanslagat911@gmail.com",hobby:"programming"},
+    data: {email: email,name:name,comment:comment},
     dataType: "json"
 }); 
 });
