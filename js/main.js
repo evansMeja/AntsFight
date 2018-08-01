@@ -1,6 +1,7 @@
 $(document).ready(function(){
 	
 $("#demo").click(function(){
+alert("cool");
 $.ajax({
     url: "https://formspree.io/evanslagat911@gmail.com",
     method: "POST",
