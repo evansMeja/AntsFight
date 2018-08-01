@@ -23,25 +23,6 @@ h2 {
   font-weight: 400;
 }
 
-.logo-img{
-animation-name:classicRotator;
-animation-iteration-count:infinite;
-animation-duration:3s;
-animation-delay:1s;
-}
-
-@keyframes classicRotator{
-	0%{
-	transform:rotateX(0deg) translate(-3px) rotateY(0deg);
-        border-radius:100%;
-	}
-	100%{
-	transform:rotateX(360deg) translate(3px) rotateY(360deg);
-	border-radius:0%;
-	}
-}
-
-
 h3 {
   font-size: 28px;
   font-weight: 300;
