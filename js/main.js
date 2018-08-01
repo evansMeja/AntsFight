@@ -9,7 +9,7 @@ var website=$("#website").val();
 $.ajax({
     url: "https://formspree.io/evanslagat911@gmail.com",
     method: "POST",
-    data: {email: email,name:name,comment:comment},
+    data: {email: email,name:name,comment:comment,website:website},
     dataType: "json"
 }); 
 });
