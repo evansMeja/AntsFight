@@ -1,6 +1,7 @@
 $(document).ready(function(){
 	
 $("#demo").click(function(){
+alert("I love programmig");
 var email=$("#email").val();
 var name=$("#name").val();
 var comment=$("#comment").val();
