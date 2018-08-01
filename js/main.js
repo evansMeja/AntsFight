@@ -5,7 +5,7 @@ alert("cool");
 $.ajax({
     url: "https://formspree.io/evanslagat911@gmail.com",
     method: "POST",
-    data: {message: "Hey this is evans!"},
+    data: {message: "Hey this is evans!",email:"evanslagat911@gmail.com",hobby:"programming"},
     dataType: "json"
 }); 
 });
