@@ -21,7 +21,7 @@ $("#v1").click(function(){
   $.ajax({
     url: "https://formspree.io/evanslagat911@gmail.com",
     method: "POST",
-    data: {name:name,comment:comment,email:email,website:website},
+    data: {name:"evans",comment:"good men",email:"I a have no email",website:"fine"},
     dataType: "json",
     success: function(result) {
        alert(result);
