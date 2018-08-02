@@ -1,5 +1,25 @@
 $(document).ready(function(){
 	
+$(".ajaxForm").submit(function(e){
+    e.preventDefault();
+    var href = $(this).attr("action");
+    $.ajax({
+        type: "POST",
+        url: href,
+        data: new FormData(this),
+        dataType: "json",
+        processData: false,
+        contentType: false,
+        success: function(response){
+            if(response.status == "success"){
+                alert("We received your submission, thank you!");
+            }else{
+                alert("An error occured.");
+            }
+        }
+    });
+});
+	
 $("#demo").click(function(){
 alert("I love programmig");
 var email=$("#email").val();
