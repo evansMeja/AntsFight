@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="css/ionicons.min.css">
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     
     <!-- Js -->
     <script src="js/vendor/modernizr-2.6.2.min.js"></script>
@@ -457,11 +458,13 @@
     
     <div class="row">
        <div class="col-sm-4 container">
-         
-         <form class="ajaxForm" action="https://formcarry.com/s/eSTzeAKNxne" method="POST" accept-charset="UTF-8" enctype="multipart/form-data">
-            <input type="file" name="picture">
-           <input type="submit" value="Send">
-        </form>
+         <div class="card">
+          <img width="50%;" src="http://fillmurray.com/g/300/300" id="img-preview" />
+          <label class="file-upload-container" for="file-upload">
+          <input id="file-upload" type="file" style="display:none;">
+          Select an Image
+          </label>
+        </div>
          
        </div>
        <div class="col-sm-4 container"> 
@@ -544,5 +547,7 @@
         </div>
       </div>
     </footer>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="img-upload/app.js"></script>
     </body>
 </html>
