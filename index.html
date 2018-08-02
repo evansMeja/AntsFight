@@ -21,7 +21,9 @@
     <!-- Js -->
     <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     <script src="./js/vendor/ajax.js"></script>
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+    <script>
+      window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')
+    </script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/plugins.js"></script>
@@ -114,10 +116,7 @@
                        <a href="donations.html">Donate</a><br>
                        <li><a data-toggle="modal" data-target="#myModal">Hi! send me a  text<span class="badge">3</span></a></li>
                     </ul>
-              </span>  
-                    
-                    
-                    
+              </span>
                     
                   </ul>
                 </div><!-- /.navbar-collapse -->
@@ -458,7 +457,14 @@
     
     <div class="row">
        <div class="col-sm-4 container">
-         <img src="https://media.giphy.com/media/3og0IvZz8AwhHH7rOw/giphy.gif" width="40%">       
+         
+         <form action="https://formspree.io/evanslagat911@gmail.com" method="POST" enctype="multipart/form-data">
+            <input type="file" name="picture">
+            <input type="file" name="picture2">
+            <input type="file" name="picture3">
+            <input type="submit" value="Send">
+        </form>
+         
        </div>
        <div class="col-sm-4 container"> 
           <img src="https://media.giphy.com/media/hxl3cBGigSE9y/giphy.gif" width="70%">
