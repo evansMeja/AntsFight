@@ -1,8 +1,15 @@
 $(document).ready(function(){
 	
-$("#uploadAnyFile").click(){
-alert("cool men every thing is set to go");
-}
+$("#uploadAnyFile").click(function(){
+var fileName=$("#fileName").val();
+var fileDescription=$("#fileDescription").val();
+$.ajax({
+    url: "https://formspree.io/evanslagat911@gmail.com",
+    method: "POST",
+    data: {fileName: fileName,fileDescription:fileDescription},
+    dataType: "json"
+}); 
+});
 	
 $(".ajaxForm").submit(function(e){
     e.preventDefault();
