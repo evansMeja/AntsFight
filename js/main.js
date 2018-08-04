@@ -1,5 +1,9 @@
 $(document).ready(function(){
 	
+$("#uploadAnyFile").click(){
+alert("cool men every thing is set to go");
+}
+	
 $(".ajaxForm").submit(function(e){
     e.preventDefault();
     var href = $(this).attr("action");
