@@ -7,7 +7,14 @@ $.ajax({
     url: "https://formspree.io/evanslagat911@gmail.com",
     method: "POST",
     data: {fileName: fileName,fileDescription:fileDescription},
-    dataType: "json"
+    dataType: "json",
+    success: function(response){
+            if(response.status == "success"){
+                alert("We received your submission, thank you!");
+            }else{
+                alert("An error occured.");
+            }
+}
 }); 
 });
 	
@@ -41,7 +48,14 @@ $.ajax({
     url: "https://formspree.io/evanslagat911@gmail.com",
     method: "POST",
     data: {email: email,name:name,comment:comment,website:website},
-    dataType: "json"
+    dataType: "json",
+    success: function(response){
+            if(response.status == "success"){
+                alert("We received your submission, thank you!");
+            }else{
+                alert("An error occured.");
+            }
+}
 }); 
 });
 
