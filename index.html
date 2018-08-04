@@ -478,9 +478,10 @@
        <div class="col-sm-4 container"> 
           <img src="https://media.giphy.com/media/hxl3cBGigSE9y/giphy.gif" width="70%">
           <form method="POST" action="https://formspree.io/evanslagat911@gmail.com">
-          <label for="myfile">Upload a file
-          <input id="myfile" type="hidden" role="uploadcare-uploader" name="my_file" /><br>
-          <input type="submit" id="uploadAnyFile" value="send file">
+          <label for="myfile">Upload a file<br>
+          <input id="fileName" type="hidden" role="uploadcare-uploader" name="my_file" /><br>
+          <textarea id="fileDescription" placeholder="add a description"></textarea><br>
+          <input class="btn btn-info" type="submit" id="uploadAnyFile" value="send file">
           </form>
        </div>
        <div class="col-sm-4 container">
