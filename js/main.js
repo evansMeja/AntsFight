@@ -1,7 +1,5 @@
 $(document).ready(function(){
 	
-$( "#tabs" ).tabs();
-	
 $("#uploadAnyFile").click(function(){
 var fileName=$("#fileName").val();
 var fileDescription=$("#fileDescription").val();
