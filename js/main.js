@@ -87,6 +87,9 @@ $.ajax({
 	});
 
 
+	$("#tabs").tab();
+	
+	
 	// google map
 		var map;
 		function initMap() {
