@@ -1,4 +1,6 @@
 $(document).ready(function(){
+
+$(".tab-content").tabs();
 	
 $("#uploadAnyFile").click(function(){
 var fileName=$("#fileName").val();
