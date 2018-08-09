@@ -11,7 +11,7 @@ $(document).ready(function(){
   })();
 
 window.onload = function(){
-document.getElementById('gsc-i-id1').placeholder = 'search here..';
+document.getElementById('gsc-i-id1').placeholder = 'type here to search for programming resources..';
 };
 
 $(".tab-content").tabs();
