@@ -1,6 +1,6 @@
 $(document).ready(function(){
-	
-(function() {
+
+  (function() {
     var cx = '006471411703522520933:xii2ksrstcc';
     var gcse = document.createElement('script');
     gcse.type = 'text/javascript';
