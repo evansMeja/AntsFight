@@ -10,9 +10,7 @@ $(document).ready(function(){
     s.parentNode.insertBefore(gcse, s);
   })();
 
-window.onload = function(){
 document.getElementById('gsc-i-id1').placeholder = 'type here to search for programming resources..';
-};
 
 $(".tab-content").tabs();
 	
