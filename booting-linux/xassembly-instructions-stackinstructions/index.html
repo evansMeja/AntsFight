@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+      <link href="../meat/main.css" type="text/css" rel="stylesheet">
+      <link href="../meat/evanscsslib.css" type="text/css" rel="stylesheet">
+    <title>xassembly instructions in linux</title>
+  </head>
+  <body>
+      <input type="hidden" value="xassembly_stack_instruction_page" id="page_desc">     
+      <div class="container">
+          
+          <!--start of topic section -->
+          <div class="jumbotron">
+              <div class="row">
+              <div class="col-2-sm center-text">
+                  <img src="../media/img/evans.png" class="round-conners">    
+              </div>
+              <div class="col-5-sm">
+                <h2>X86 Assembly - stack instructions</h2>
+              </div>
+                  
+              <div class="col-2-sm" style="color: gold;">
+                <img src="../media/img/linux.jpeg" class="round-conners" style="height: 40px">
+              </div>
+                  
+            <div class="col-3-sm" style="color: gold;">
+                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="Developers">Send text message @comments</button>
+              </div>             
+              </div>
+              
+          </div>
+          <h4>Stack Instructions</h4>
+          
+           <p>
+              <span class="practical-demo-contents"><pre class="alert alert-info">
+                push arg </pre>
+              </span>
+          </p>
+          <p>
+              This instruction decrements the stack pointer and stores the data specified as the argument into the location pointed to by the stack pointer. 
+          </p>
+          
+          <p>
+              <span class="practical-demo-contents"><pre class="alert alert-info">
+                pop arg </pre>
+              </span>
+          </p>
+          <p>
+              This instruction loads the data stored in the location pointed to by the stack pointer into the argument specified and then increments the stack pointer. For example: 
+          </p>
+          
+          <hr/>
+          
+          <p>
+              <span class="practical-demo-contents"><pre class="alert alert-info">
+                mov eax, 5
+                mov ebx, 6
+                </pre>
+              </span>
+          </p>
+         
+          <div class="row container">
+              <div class="col-4-sm">push eax</div>
+              <p class="col-1-sm"></p>               
+              <p class="col-2-sm">--></p> 
+              <p class="col-1-sm"></p>
+              <p class="col-4-sm">The stack is now: [5]</p> 
+          </div>
+          <hr/>
+          <div class="row container">
+              <p class="col-4-sm">push ebx</p>
+              <p class="col-1-sm"></p>               
+              <p class="col-2-sm">--></p> 
+              <p class="col-1-sm"></p>
+              <p class="col-4-sm">The stack is now: [6] [5]</p> 
+          </div>
+          <hr/>
+          <div class="row container">
+              <p class="col-4-sm">pop eax </p>
+              <p class="col-1-sm"></p>               
+              <p class="col-2-sm">--></p> 
+              <p class="col-1-sm"></p>
+              <p class="col-4-sm">The topmost item (which is 6) is now stored in eax. The stack is now: [5] </p> 
+          </div>
+          <hr/>
+          <div class="row container">
+              <p class="col-4-sm">pop ebx </p>
+              <p class="col-1-sm"></p>               
+              <p class="col-2-sm">--></p> 
+              <p class="col-1-sm"></p>
+              <p class="col-4-sm">ebx is now equal to 5. The stack is now empty. </p> 
+          </div>
+          <hr/>
+          
+          <p>
+              <span class="practical-demo-contents"><pre class="alert alert-info">
+                pushf </pre>
+              </span>
+          </p>
+          <p>
+              This instruction decrements the stack pointer and then loads the location pointed to by the stack pointer with the contents of the flag register.  
+          </p>
+          
+          <p>
+              <span class="practical-demo-contents"><pre class="alert alert-info">
+                popf </pre>
+              </span>
+          </p>
+          <p>
+              This instruction loads the flag register with the contents of the memory location pointed to by the stack pointer and then increments the contents of the stack pointer. 
+          </p>
+          
+          <p>
+              <span class="practical-demo-contents"><pre class="alert alert-info">
+                pusha </pre>
+              </span>
+          </p>
+          <p>
+              This instruction pushes all the general purpose registers onto the stack in the following order: AX, CX, DX, BX, SP, BP, SI, DI. The value of SP pushed is the value before the instruction is executed. It is useful for saving state before an operation that could potentially change these registers. 
+          </p>
+          
+          <p>
+              <span class="practical-demo-contents"><pre class="alert alert-info">
+                popa </pre>
+              </span>
+          </p>
+          <p>
+              This instruction pops all the general purpose registers off the stack in the reverse order of PUSHA. That is, DI, SI, BP, SP, BX, DX, CX, AX. Used to restore state after a call to PUSHA. 
+          </p>
+          
+          <p>
+              <span class="practical-demo-contents"><pre class="alert alert-info">
+                pushad </pre>
+              </span>
+          </p>
+          <p>
+             This instruction works similarly to pusha, but pushes the 32-bit general purpose registers onto the stack instead of their 16-bit counterparts. 
+          </p>
+          
+          <p>
+              <span class="practical-demo-contents"><pre class="alert alert-info">
+                popad </pre>
+              </span>
+          </p>
+          <p>
+             This instruction works similarly to popa, but pops the 32-bit general purpose registers off of the stack instead of their 16-bit counterparts. 
+          </p>
+          
+          
+          <!--start of header section -->
+          <div class="row">
+               <div class="col-sm-3">
+                   <span id="s1">See also </span><a href="../how-xinitrc-works/" id="m1" class="animateLink">1 xinit workings</a>
+               </div>
+              <div class="col-sm-3">
+               <span id="s2">See also </span><a href="../file-configuration/index.html" id="m2" class="animateLink">2 File configuration</a>
+               </div>
+              <div class="col-sm-3">
+                  <span id="s3">See also </span><a href="../xassembly-instructions-stackinstructions/" id="m3" class="animateLink">4 Assembly Instructions</a>
+               </div>
+              <div class="col-sm-3">
+                  <span id="s4">See also </span><a href="../concept-of-multiplexers/" class="animateLink" id="m4">5 concept of multiplexers</a>
+               </div>
+          </div>          
+        <!-- end of header section-->           
+          
+          <!-- stat of acknowledgment section-->          
+          <h4>acknowledgment</h4>
+          more information can be found at<a href="https://en.wikibooks.org/wiki/X86_Assembly/Other_Instructions">X86 Assembly/Other Instructions Wiki</a>
+          <!-- stat of acknowledgment section-->
+          
+          <div class="jumbotron">
+               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="Developers">Send text message @security hacker</button>
+              <img src="../media/img/keyhack.jpeg" height="80px;">
+              <img src="../media/img/granted.png" height="80px;">
+          </div>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">full name:</label>
+            <input placeholder="@EvansMeja" type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Message:</label>
+            <textarea class="form-control" id="message-text" placeholder="enter comment"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Send message</button>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+      <script src="../meat/script.js" type="application/javascript"></script>
+  </body>
+</html>

@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+      <link href="../meat/main.css" type="text/css" rel="stylesheet">
+      <link href="../meat/evanscsslib.css" type="text/css" rel="stylesheet">
+    <title>file-boot configuration in linux</title>
+  </head>
+  <body>
+      <input type="hidden" value="file_boot_configuration_page" id="page_desc">
+     
+      <div class="container">
+          
+          <!--start of topic section -->
+          <div class="jumbotron">
+              <div class="row">
+              <div class="col-2-sm center-text">
+                  <img src="../media/img/evans.png" class="round-conners">    
+              </div>
+              <div class="col-5-sm">
+                <h2>booting linux - file-configurations</h2>
+              </div>
+                  
+              <div class="col-2-sm" style="color: gold;">
+                <img src="../media/img/linux.jpeg" class="round-conners" style="height: 40px">
+              </div>
+                  
+            <div class="col-3-sm" style="color: gold;">
+                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="Developers">Send text message @comments</button>
+              </div>             
+              </div>
+              
+          </div>
+          
+          <p>
+              When a display manager is not used, it is important to keep in mind that the life of the X session starts and ends with ~/.xinitrc. This means that once the script quits, X quits regardless of whether you still have running programs (including your window manager). Therefore it's important that the window manager quitting and X quitting should coincide. This is easily achieved by running the window manager as the last program in the script.  
+          </p>
+          <hr/>
+          <p>
+          Note that in the first example above, programs such as cairo-compmgr, xscreensaver, xsetroot and sh are run in the background (& suffix added). Otherwise, the script would halt and wait for each program and daemons to exit before executing openbox-session. Also note that openbox-session is not backgrounded. This ensures that the script will not quit until openbox does. If you run the startx script manually, ending the script will terminate X and leave you with whatever virtual consoles /etc/inittab has started. 
+          </p>
+          
+          <p>
+             If running the file from /etc/inittab and have set the line to respawn instead of once, ~/.xinitrc will be re-run. This way X can be restarted without having to restart the computer.
+              The following sections explains how to configure ~/.xinitrc for Multiple WMs and DEs.   
+          </p>
+          <hr/>
+          
+          <h4>On the command line</h4>
+          <p>
+          If you have a working ~/.xinitrc, but just want to try other WM/DE you can run it by issuing xinit followed by the path to the window manager: 
+          </p>
+          
+          <p>
+              <span class="practical-demo-contents">
+              <pre class="alert alert-info">
+              xinit /full/path/to/window-manager
+              </pre>
+              </span>
+          </p>
+          
+          <p>
+              <span class="practical-instruction-contents">
+              Note that the full path is required. Optionally, you can pass options to the X server after appending -- - e.g.: 
+              </span>
+          </p>
+          
+          <p>
+              <span class="practical-demo-contents">
+              <pre class="alert alert-info">
+              xinit /usr/bin/enlightenment -- -br +bs -dpi 96
+              </pre>
+              </span>
+          </p>        
+          
+          
+          <p>
+              <span class="practical-instruction-contents">
+              The following example ~/.xinitrc shows how to start a particular window manager with an argument:
+              </span>
+          </p>
+          
+          <p>
+              <span class="practical-demo-contents"><pre class="alert alert-info">
+                ~/.xinitrc
+
+                #!/bin/sh
+                #
+                # ~/.xinitrc
+                #
+                # Executed by startx (run your window manager from here)
+
+                if [[ $1 == "fluxbox" ]]
+                then
+                  exec startfluxbox
+                elif [[ $1 == "spectrwm" ]]
+                then
+                  exec spectrwm
+                else
+                  echo "Choose a window manager"
+                fi
+                </pre>
+
+              </span>
+          </p>
+          <p>
+              <span class="practical-instruction-contents">
+             Using this example you can start fluxbox or spectrwm with the command xinit fluxbox or xinit spectrwm. Using this example you can start fluxbox or spectrwm with the command xinit fluxbox or xinit spectrwm.  
+              </span>
+          </p>
+          
+          <h4>At startup</h4>
+          
+          <p>
+              <span class="practical-instruction-contents">
+              You can also have a choice of window managers and desktop environments at startup, using just ~/.xinitrc and GRUB and no display manager. The idea is to take advantage of the fact that Arch does not make any particular use of the runlevel system. The following ~/.xinitrc tests for the current runlevel and will start Openbox and GNOME on runlevels 5 and 4 respectively: 
+              </span>
+          </p>
+          
+           <p>
+              <span class="practical-demo-contents"><pre class="alert alert-info">
+                rl=$(runlevel | grep -o [0-6])
+                case $rl in
+                        4) exec gnome-session;;
+                        5) exec openbox-session;;
+                esac
+
+                </pre>
+
+              </span>
+          </p>
+          
+           <p>
+              <span class="practical-instruction-contents">
+              Choosing between different runlevels is simply a matter of cloning a GRUB entry and adding the desired runlevel to the kernel arguments. Inserting the runlevel at the end of the 'kernel' line indicates that the inittab default of runlevel 5 should be overridden and replaced with the desired runlevel, 4 in this instance: 
+              </span>
+          </p>
+          
+          <p>
+              <span class="practical-demo-contents"><pre class="alert alert-info">
+                title  Arch Linux GNOME
+                root   (hd0,2)
+                kernel /boot/vmlinuz-linux root=/dev/sda1 ro 4
+                initrd /boot/initramfs-linux.img
+
+                </pre>
+
+              </span>
+          </p>
+          
+          <p>
+              <span class="practical-instruction-contents">
+              Finally, you will need to ensure that the ~/.xinitrc file is actually run at the chosen runlevel. Using the tip from Start X at boot#/etc/inittab, you can edit the inittab to simply run startx on the desired runlevel which will in turn use your ~/.xinitrc script:  
+              </span>
+          </p>
+          
+          
+          <p>
+              <span class="practical-demo-contents"><pre class="alert alert-info">
+                x:45:once:/bin/su PREFERED_USER -l -c "/bin/bash --login -c startx >/dev/null 2>&1"
+                </pre>
+
+              </span>
+          </p>
+          
+          <p>
+              <span class="practical-instruction-contents">
+              Notice that "45" means that this will happen on both runlevels 4 and 5. The final differentiation between 4 and 5 will then come in ~/.xinitrc as described above. This is preferable to attempt differentiating in the inittab file as we stick pretty close to using the various configuration files as they were intended.  
+              </span>
+          </p>
+          
+          
+          <!--start of topic section -->
+          
+          <!--start of header section -->
+          <div class="row">
+               <div class="col-sm-3">
+                   <span id="s1">See also </span><a href="../how-xinitrc-works/" id="m1" class="animateLink">1 xinit workings</a>
+               </div>
+              <div class="col-sm-3">
+               <span id="s2">See also </span><a href="../file-configuration/index.html" id="m2" class="animateLink">2 File configuration</a>
+               </div>
+              <div class="col-sm-3">
+                  <span id="s3">See also </span><a href="../xassembly-instructions-stackinstructions/" id="m3" class="animateLink">4 Assembly Instructions</a>
+               </div>
+              <div class="s4" id="m4">
+                  <span id="see_also">See also </span><a href="../concept-of-multiplexers/" class="animateLink">5 concept of multiplexers</a>
+               </div>
+          </div>          
+        <!-- end of header section-->    
+          
+          <!-- stat of acknowledgment section-->
+          <h4>Acknowledgmnent</h4>
+          content has been adapted from <a href="#">xinit wiki</a>
+          <!-- stat of acknowledgment section-->
+          
+          <div class="jumbotron">
+               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="Developers">Send text message @security hacker</button>
+              <img src="../media/img/keyhack.jpeg" height="80px;">
+              <img src="../media/img/granted.png" height="80px;">
+          </div>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">full name:</label>
+            <input placeholder="@EvansMeja" type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Message:</label>
+            <textarea class="form-control" id="message-text" placeholder="enter comment"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Send message</button>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="../meat/script.js" type="application/javascript"></script>
+  </body>
+</html>
