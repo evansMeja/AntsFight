@@ -1,5 +1,57 @@
 $(document).ready(function(){
 
+	(function(){
+var id;
+var msg;
+document.getElementById("submitSite").addEventListener("click",function(){
+bypassBlockedSites();
+});
+
+function bypassBlockedSites(){
+var starturl = "http://www.google.com/translate?langpair=ja|en&u=";
+var sitename = acessHTML("sitename");
+var fullurl = "www."+sitename+".com" 
+var hackurl = starturl+fullurl;
+id = "results";
+msg = "ok";
+confirmAcess(hackurl,fullurl);
+}
+
+function confirmAcess(hackurl,fullurl){
+if(confirm("are you sure "+fullurl+" is blocked by your ISP?")){
+alert("Thanks");
+openInNewTab(hackurl);
+}
+}
+
+function openInNewTab(url) {
+  var win = window.open(url, '_blank');
+  win.focus();
+}
+
+
+
+function acessHTML(id){
+return document.getElementById(id).value;
+}
+
+function acessValue(id){
+return document.getElementById(id).value;
+}
+
+function setHTML(id,msg){
+return document.getElementById(id).innerHTML = msg;
+}
+
+function setValue(id){
+return document.getElementById(id).value;
+}
+})();
+
+
+
+	
+	
   (function() {
     var cx = '006471411703522520933:xii2ksrstcc';
     var gcse = document.createElement('script');
