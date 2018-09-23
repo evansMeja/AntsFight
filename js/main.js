@@ -1,5 +1,5 @@
 $(document).ready(function(){
-$("#search").focus(function(){
+$("#search1").focus(function(){
 $("#machineLearningSearchEngine").modal();
 });
 	
