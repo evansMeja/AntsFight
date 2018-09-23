@@ -1,6 +1,9 @@
 $(document).ready(function(){
-
-	(function(){
+$("#search").focus(function(){
+$("#machineLearningSearchEngine").modal();
+});
+	
+(function(){
 var id;
 var msg;
 document.getElementById("submitSite").addEventListener("click",function(){
@@ -46,11 +49,7 @@ return document.getElementById(id).innerHTML = msg;
 function setValue(id){
 return document.getElementById(id).value;
 }
-})();
-
-
-
-	
+})();	
 	
   (function() {
     var cx = '006471411703522520933:xii2ksrstcc';
