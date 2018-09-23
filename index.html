@@ -114,9 +114,7 @@
 	 <li><a href="ahttps://evansmeja.github.io/linked-list-notes/">Linked List</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-	<li><a class="navbar-brand" data-toggle="modal" data-target="#myModal">
-	<img src="img/ml.png" width="30" height="30" class="d-inline-block align-top" alt="">	
-	 </i></a></li> 
+	<li><a href="#" class="navbar-brand"><input type="text" id="search1" placeholder="search anywhere.."></a></li> 
       </ul>
     </div>
   </div>
@@ -471,30 +469,34 @@
          <!-- Trigger the modal with a button -->
 
 
-<!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h5 class="modal-title">Machine Learning Search Engine</h5>
-      </div>
-      <div class="modal-body">
-        <gcse:search></gcse:search>         
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-
-  </div>
-</div>
-         
-        </div>
-    </div>
     
+
+ <div class="modal fade" style="width:100%;" id="machineLearningSearchEngine" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Machine Learning Engine</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="form-group">
+                    <label for="recipient-name" class="col-form-label">knowledge is wisdom:</label>
+                    <gcse:search></gcse:search> 
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>        
+      </div>
+
+
     
 <div class="container">
 <div class="row">
