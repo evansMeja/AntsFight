@@ -42,7 +42,7 @@ function bypassBlockedSites(){
 //modal master
 function showThisModal(){
 $("#"+arguments[0]).modal();
-});
+}
 	
 //set payload listeners
 function setIdEventListener(elementLocation ,actionListener, payload){
