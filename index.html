@@ -84,7 +84,7 @@
 	      </li>
 	    </ul>
 	    <form class="form-inline my-2 my-lg-0">
-	      <input class="form-control mr-sm-2" class="search1" type="search" placeholder="search anywhere here" aria-label="Search">
+	      <input class="form-control mr-sm-2" id="search1" type="search" placeholder="search anywhere here" aria-label="Search">
 	    </form>
 	  </div>
 	</div>
@@ -303,16 +303,7 @@
       </div>
     </section>
     
-    <div class="row">
-       <div class="col-sm-4 container" style="text-align:center;">
-         <img width="100%;" src="https://res.cloudinary.com/decc6gd2d/image/upload/v1533240794/dx1fvc31plchoig0f5gk.png" id="img-preview" />
-         <div class="card">
-          <label class="file-upload-container btn btn-info" for="file-upload" >upload a picture
-            <input id="file-upload" type="file" style="display:none;">
-            <i class="material-icons" style="font-size:17px">add_a_photo</i>
-          </label></br>
-        </div>         
-       </div>
+    <div class="row">	
        <div class="col-sm-4 container" style="text-align:center;"> 
           <div class="jumbotron">
              <h5>Hi! you can share programming documents and tricks</h5>
@@ -320,7 +311,7 @@
           <form method="POST" action="https://formspree.io/evanslagat911@gmail.com"></hr>
          <label for="fileName">
           <input id="fileName" type="hidden" role="uploadcare-uploader" name="my_file" />
-          <i class="material-icons">attachment</i>
+          <i class="material-icons"></i>
          </label><br></hr>
 	  <p class="lead emoji-picker-container">
           <textarea class="form-control textarea-control" 
@@ -337,6 +328,7 @@
          </div>
          </p>
        </div>
+
        <div class="col-sm-4 container" style="text-align:center;">
        <h5 class="jumbotron">Related links</h5>
 	 <a href="gallery/">Gallery</a><br>
@@ -351,51 +343,91 @@
     <i class="fa fa-linux" aria-hidden="true"></i>
     <i class="fa fa-dropbox" aria-hidden="true"></i>
          
-         <!-- Trigger the modal with a button -->
+   </div>      <!-- Trigger the modal with a button -->
 
 
     
 
- <div class="modal fade" style="width:100%;" id="machineLearningSearchEngine" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Machine Learning Engine</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <form>
-                  <div class="form-group">
-                    <label for="recipient-name" class="col-form-label">knowledge is wisdom:</label>
-                    <gcse:search></gcse:search> 
-                  </div>
-                </form>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+	       
+
+<footer class="section footer-classic context-dark bg-image" style="background: #2d3246;">
+        <div class="container">
+          <div class="row row-30">
+            <div class="col-md-4 col-xl-5">
+              <div class="pr-xl-4"><a class="brand" href="index.html"><img class="brand-logo-light" src="images/agency/logo-inverse-140x37.png" alt="" width="140" height="37" srcset="images/agency/logo-retina-inverse-280x74.png 2x"></a>
+                <p>We are an award-winning creative agency, dedicated to the best result in web design, promotion, business consulting, and marketing.</p>
+                <!-- Rights-->
+                <p class="rights"><span>©  </span><span class="copyright-year">2018</span><span> </span><span>Waves</span><span>. </span><span>All Rights Reserved.</span></p>
               </div>
             </div>
+            <div class="col-md-4">
+              <h5>Contacts</h5>
+              <dl class="contact-list">
+                <dt>Address:</dt>
+                <dd>798 South Park Avenue, Jaipur, Raj</dd>
+              </dl>
+              <dl class="contact-list">
+                <dt>email:</dt>
+                <dd><a href="mailto:#">dkstudioin@gmail.com</a></dd>
+              </dl>
+              <dl class="contact-list">
+                <dt>phones:</dt>
+                <dd><a href="tel:#">+254792281868</a> <span>or</span> <a href="tel:#">+25479281868</a>
+                </dd>
+              </dl>
+            </div>
+            <div class="col-md-4 col-xl-3">
+              <h5>Links</h5>
+              <ul class="nav-list">
+                <li><a href="#">About</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contacts</a></li>
+                <li><a href="#">Pricing</a></li>
+              </ul>
+            </div>
           </div>
-        </div>        
-      </div>
+        </div>
+        <div class="row no-gutters social-container">
+          <div class="col"><a class="social-inner" href="#"><span class="icon mdi mdi-facebook"></span><span>Facebook</span></a></div>
+          <div class="col"><a class="social-inner" href="#"><span class="icon mdi mdi-instagram"></span><span>instagram</span></a></div>
+          <div class="col"><a class="social-inner" href="#"><span class="icon mdi mdi-twitter"></span><span>twitter</span></a></div>
+          <div class="col"><a class="social-inner" href="#"><span class="icon mdi mdi-youtube-play"></span><span>google</span></a></div>
+        </div>
+      </footer>
 
-<nav class="navbar navbar-default navbar-fixed-bottom">
-	<div class="container-fluid">
-		<div class="collapse navbar-collapse" id="myNavbar">
-			<ul class="nav navbar-nav">
-			<li><a href="message/">contact</a></li>
-			<li><a href="#">Support</a></li>
-			<li><a href="#">Terms</a></li>
-			</ul>
-			<ul class="nav navbar-nav navbar-right">
-			<li><a href="#">licence &copy; maintained by Evans Kiprotich Kiplagat</a></li>
-			</ul>
+
+
+
+ <!-- start of modals -->
+
+<div class="modal fade" style="width:100%;" id="machineLearningSearchEngine" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Machine Learning Engine</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+
+			<div class="modal-body">
+			<form>
+				<div class="form-group">
+				<label for="recipient-name" class="col-form-label">knowledge is wisdom:</label>
+				<gcse:search></gcse:search> 
+				</div>
+			</form>
+			</div>
+
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			</div>
 		</div>
 	</div>
-</nav>
-
+</div>  
+	       
 
 <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
