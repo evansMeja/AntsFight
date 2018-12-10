@@ -4,7 +4,7 @@ padding:3px;
 border-top:6px solid blue;
 border-bottom:2px solid blue;
 animation-name:jumbo_chal_headers;
-animation-iteration-count:infinite
+animation-iteration-count:infinite;
 animation-duration:3s;
 }
 
