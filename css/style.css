@@ -1,6 +1,34 @@
 #simple_problems{
-background:violet;
 padding:10px;
+}
+
+.jumbo_chal_headers{
+margin:0px;
+padding:3px;
+border-top:2px solid blue;
+border-bottom:2px solid blue;
+animation-name:jumbo_chal_headers;
+animation-duration:3s;
+}
+
+@keyframes jumbo_chal_headers{
+0%{
+border-top:2px solid blue;
+color:white;
+}
+33%{
+border-top:2px solid red;
+color:yellow;
+}
+100%{
+color:black;
+border-top:2px solid green;
+}
+}
+
+.chal_boxes{
+border-radius:2px;
+background:violet;
 }
 
 #problems_header{
