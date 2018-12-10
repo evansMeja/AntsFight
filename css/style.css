@@ -1,3 +1,13 @@
+#simple_problems{
+background:violet;
+padding:10px;
+}
+
+#problems_header{
+font-size:20px;
+text-align:center;
+}
+
 
 .panel-shadow {
     box-shadow: rgba(0, 0, 0, 0.3) 7px 7px 7px;
