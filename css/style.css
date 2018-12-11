@@ -1,7 +1,6 @@
 .jumbo_chal_headers{
 margin:0px;
 padding:3px;
-border-top:6px solid blue;
 border-bottom:2px solid blue;
 animation-name:jumbo_chal_headers;
 animation-iteration-count:infinite;
@@ -10,18 +9,10 @@ animation-duration:3s;
 
 @keyframes jumbo_chal_headers{
 0%{
-border-top:2px solid blue;
 border-radius:20px;
-color:white;
 opacity:0.5;
 }
-33%{
-border-top:2px solid red;
-color:yellow;
-}
 100%{
-color:black;
-border-top:2px solid green;
 opacity:1;
 border-radius:5px;
 }
@@ -29,7 +20,7 @@ border-radius:5px;
 
 .chal_boxes{
 border-radius:2px;
-background:violet;
+background:pink;
 }
 
 #problems_header{
