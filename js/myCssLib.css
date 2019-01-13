@@ -1,0 +1,45 @@
+.center-text{
+  text-align: center;
+}
+
+.create-attraction{
+   opacity: 7;
+   color: blueviolet;
+}
+
+.round-conners{
+    border-radius: 100%;
+}
+
+.currentPage{
+    font-weight: bold;
+    color: green;
+}
+
+
+.animateLink{
+    text-decoration: underline;
+    animation-name: animatingLink;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+}
+
+@keyframes animatingLink{
+    0%{
+      color: red; 
+      transform: rotate(0deg) scale(1);
+    }
+    50%{
+       color: orange;  
+       transform: rotate(-60deg);
+       opacity:.9;
+    }
+    100%{
+       color: grey; 
+       transform: rotate(60deg) scale(.5
+    }
+}
+
+.activeLink{
+  color: pink;  
+}
