@@ -84,93 +84,7 @@
               </span>
           </p>
           
-          <p>
-              <span class="practical-demo-contents">
-              <pre class="alert alert-info">
-              $ cp /etc/skel/.xinitrc ~/
-              </pre>
-              </span>
-          </p>
           
-          <p>
-              <span class="practical-instruction-contents">
-              Now, edit ~/.xinitrc and uncomment the line that corresponds to your DE/WM. For example, if you want to test your basic X configuration (mouse, keyboard, graphics resolution), you can simply use xterm: 
-              </span>
-          </p>
-          
-          <p>
-              <span class="practical-demo-contents"><pre class="alert alert-info">
-                #!/bin/sh
-                #
-                # ~/.xinitrc
-                #
-                # Executed by startx (run your window manager from here)
-
-                # exec gnome-session
-                # exec startkde
-                # exec startxfce4
-                # exec wmaker
-                # exec icewm
-                # exec blackbox
-                # exec fluxbox
-                # exec openbox-session
-                # ...or the Window Manager of your choice
-                exec xterm</pre>
-
-              </span>
-          </p>
-          <p>
-              <span class="alert alert-warning">
-                  <button class="btn btn-default">Note</button>: It is important that only one exec line is uncommented, or else only the first uncommented line will be run.
-              </span>
-          </p>
-          
-          <p>
-              <span class="practical-instruction-contents">
-              After editing ~/.xinitrc properly, it's time to run X. To run X as a non-root user, issue: 
-              </span>
-          </p>
-          
-          <p>
-              <span class="practical-demo-contents">
-                <pre class="alert alert-info">
-                $ startx                
-                </pre>
-              </span>
-          </p>
-          
-          
-          <p>
-              <span class="practical-instruction-contents">
-              or 
-              </span>
-          </p>
-          
-          <p>
-              <span class="practical-demo-contents">
-                <pre class="alert alert-info">
-                $ xinit                
-                </pre>
-              </span>
-          </p>
-          
-           <p>
-              <span class="practical-instruction-contents">
-              Your DE/WM of choice should now start up. You are now free to test your keyboard with its layout, moving your mouse around and of course enjoy the view.
-                  If you experience trouble with automounting, try inserting <span class="create-attraction">ck-launch-session</span> between the exec statement and the DE/WM statement. For example:  
-              </span>
-          </p>
-          
-          <p>
-              <span class="practical-demo-contents">
-                <pre class="alert alert-info">
-                $ exec ck-launch-session gnome-session               
-                </pre>
-              </span>
-          </p>
-          
-          
-          <p>
               <span class="alert alert-warning">
                   <button class="btn btn-default">Note</button>: This requires that you have the consolekit package installed.
               </span>
@@ -183,7 +97,7 @@
           </p>
           
           <!--start of topic section -->
-          
+           <h4>Recommended articles</h4>
           <!--start of header section -->
           <div class="row">
                <div class="col-sm-3">
