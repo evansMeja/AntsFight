@@ -3,6 +3,8 @@ padding:4px;
 border: 2px solid yellow;
 margin: 0px;
 color: blue;
+height:15%;
+width:100%;
 }
 .center-text{
   text-align: center;
