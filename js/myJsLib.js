@@ -4,48 +4,29 @@ $(".topLink0").attr('href' , '../importants-document-conversion-sites.html');
 $(".topLink1").attr('href' , '../downloads.html');
 $(".topLink2").attr('href' , '../forums.html');
 $(".topLink3").attr('href' , '../message');
+ styleLinks();
 });
 
-var canDisplayPopUpText=false;
-var message="";
-var activeLink="";
-var activeSeeAlsoId="";
-(function(){
-    var pageId=document.getElementById("page_desc").value;
-    if(pageId=="file_boot_configuration_page"){ 
-        activeLink="#m2";
-        activeSeeAlsoId="s2";
-        setDialogMessage();
-        canDisplayPopUpText=true;
-    }else if(pageId=="xassembly_stack_instruction_page"){
-      activeLink="#m3";
-      activeSeeAlsoId="s3";
-      setDialogMessage();  
-      canDisplayPopUpText=true; 
-    }else if(pageId=="xinitrc_instruction_page"){
-      activeLink="#m1";
-      activeSeeAlsoId="s1";
-      setDialogMessage(); 
-      canDisplayPopUpText=true;
-    }else if(pageId=="concept_of_multiplexers_configuration_page"){
-      activeLink="#m4";
-      activeSeeAlsoId="s4";
-      setDialogMessage(); 
-      canDisplayPopUpText=true;
+var activeLink = '';
+
+function styleLinks(){
+    activeLink=document.getElementById("page_desc").value;
+    if(activeLink=="p0"){ 
+        styleLink("l0");
+    }else if(activeLink=="p1"){
+        styleLink("l1");
+    }else if(activeLink=="p2"){
+        styleLink("l2");
+    }else if(activeLink=="p3"){
+        styleLink("l3");
     }  
-    displayPopUp();
-})();
-
-
-function setDialogMessage(){
-$(activeLink).removeClass("animateLink").addClass("currentPage");
-document.getElementById(activeSeeAlsoId).innerHTML="active -> ";
 }
 
-function displayPopUp(){
-  if(canDisplayPopUpText){
-}  
+function styleLink(linkID){
+$(linkID).removeClass("animateLink").addClass("currentPage");
+$(linkID).html="active -> ";
 }
+
 
 (function(){
     $(activeLink).click(function(e){
@@ -54,15 +35,8 @@ function displayPopUp(){
     });
 })();
 
-function makeThisLinkActive(elem){
-    alert(document.getElementById(elem).innerHTML);
-}
-
 $('#exampleModal').on('show.bs.modal', function (event) {
-  var button = $(event.relatedTarget) // Button that triggered the modal
-  var recipient = button.data('whatever') // Extract info from data-* attributes
-  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-  var modal = $(this)
-  modal.find('.modal-title').text('New message to ' + recipient)
+  var button = $(event.relatedTarget)
+  var recipient = button.data('whatever') 
+   $(this).find('.modal-title').text('New message to ' + recipient)
 })
