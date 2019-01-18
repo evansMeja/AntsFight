@@ -1,5 +1,8 @@
 
-alert("collecting javascript stuff");
+$(document).ready(function(){
+alert("taking care of javascript bullshit");
+});
+
 var canDisplayPopUpText=false;
 var message="";
 var activeLink="";
