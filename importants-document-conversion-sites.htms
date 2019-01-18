@@ -20,14 +20,14 @@
           <div class="jumbotron">
               <div class="row">
               <div class="col-2-sm center-text">
-                  <img src="../media/img/evans.png" class="round-conners">    
+                  <img src="https://res.cloudinary.com/decc6gd2d/image/upload/v1537772709/IMG_6424.jpg" class="round-conners">    
               </div>
               <div class="col-5-sm">
                 <h2>booting linux - xinitrc workings</h2>
               </div>
                   
               <div class="col-2-sm" style="color: gold;">
-                <img src="../media/img/linux.jpeg" class="round-conners" style="height: 40px">
+                <img src="https://res.cloudinary.com/decc6gd2d/image/upload/v1537772708/IMG_6425.jpg" class="round-conners" style="height: 40px">
               </div>
                   
             <div class="col-3-sm" style="color: gold;">
