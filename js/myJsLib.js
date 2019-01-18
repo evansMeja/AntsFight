@@ -1,9 +1,9 @@
 
 $(document).ready(function(){
 alert("taking care of javascript bullshit");
-$(".topLink0").attr('href' , 'home.html');
-$(".topLink1").attr('href' , './');
-$(".topLink2").attr('href' , './');
+$(".topLink0").attr('href' , '../home.html');
+$(".topLink1").attr('href' , '../downloads.html');
+$(".topLink2").attr('href' , '../forums.html');
 $(".topLink3").attr('href' , './');
 alert("converted all the links");
 });
