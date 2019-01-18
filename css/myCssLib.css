@@ -1,7 +1,8 @@
-.upper-tron{
+.upperTron{
 padding:4px;
-border: 2px solid blue;
+border: 2px solid yellow;
 margin: 0px;
+color: blue;
 }
 .center-text{
   text-align: center;
