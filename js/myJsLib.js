@@ -1,3 +1,5 @@
+
+alert("collecting javascript stuff");
 var canDisplayPopUpText=false;
 var message="";
 var activeLink="";
