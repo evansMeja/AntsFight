@@ -1,4 +1,4 @@
-$(document).readyState(function(){
+$(document).ready(function(){
 alert("ready");
 });
 
@@ -9,7 +9,7 @@ setIdEventListener("submitSite" ,"click", bypassThisBlockedSite(acessValue("")))
 
 //JQUERY DEPENDENT CODE IS HERE
 //functions excecuted after the page loads
-$(document).read(function(){
+$(document).ready(function(){
 setIdEventListener("search1" ,"mousedown", showThisModal("machineLearningSearchEngine"));
 setIdEventListener("demo" ,"click", submitThisDetailsFromEmailClient(["email","name","comment","website"]));
 })();
