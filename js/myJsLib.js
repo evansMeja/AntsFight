@@ -3,7 +3,7 @@ $(document).ready(function(){
 $(".topLink0").attr('href' , '../home.html');
 $(".topLink1").attr('href' , '../downloads.html');
 $(".topLink2").attr('href' , '../forums.html');
-$(".topLink3").attr('href' , './');
+$(".topLink3").attr('href' , '../message');
 });
 
 var canDisplayPopUpText=false;
