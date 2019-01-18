@@ -1,3 +1,7 @@
+$(document).readyState(function(){
+alert("ready");
+});
+
 //functions executed immediately
 setSearchBarVariable();
 //setIdEventListener(elementLocation ,actionListener, payload);
