@@ -1,6 +1,11 @@
 
 $(document).ready(function(){
 alert("taking care of javascript bullshit");
+$(".topLink0").attr('href' , 'home.html');
+$(".topLink1").attr('href' , './');
+$(".topLink2").attr('href' , './');
+$(".topLink3").attr('href' , './');
+alert("converted all the links");
 });
 
 var canDisplayPopUpText=false;
